@@ -1,0 +1,10 @@
+#!/bin/bash
+
+sudo cpupower frequency-set -g performance > /dev/null
+echo "set cpu performance Done!"
+
+#for i in {0..63};
+#do
+#    echo "performance" | sudo tee /sys/devices/system/cpu/cpu$i/cpufreq/scaling_governor
+#done
+

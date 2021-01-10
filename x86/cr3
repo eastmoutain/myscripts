@@ -1,0 +1,26 @@
+#!/bin/bash
+
+echo " Control Register 3 (CR3)"
+echo ""
+echo "  63             52 51                                      32"
+echo "  +----------------------------------------------------------+"
+echo "  |  Reserved. MBZ |   Page-Map Level-4 Table Base Address   |"
+echo "  +----------------------------------------------------------+"
+echo ""
+echo "   31                                  12 11      4  3        "
+echo "  +----------------------------------------------------------+"
+echo "  |  Page-Map Level-4 Table Base Address |  Rsv |PCD|PWT|Rsv|"
+echo "  +----------------------------------------------------------+"
+echo "                                                 |    |-- Page-Level Writethrough (PWT) Bit"
+echo "                                                 |-- Page-Level Cache Disable (PCD) Bit."
+echo ""
+echo " Bit 3: Page-level writethrough indicates whether the highestlevel"
+echo "        page-translation table has a writeback or writethrough caching policy."
+echo "        When PWT=0, the table has a writeback caching policy. When PWT=1,"
+echo "        the table has a writethrough caching policy."
+echo ""
+echo " Bit 4: Page-level cache disable indicates whether the highestlevel"
+echo "        page-translation table is cacheable. When PCD=0, the table is cacheable."
+echo "        When PCD=1, the table is not cacheable."
+
+

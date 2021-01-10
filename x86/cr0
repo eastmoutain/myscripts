@@ -1,0 +1,27 @@
+#!/bin/bash
+
+echo " Control Register 0 (CR0)"
+echo ""
+echo "  63                                                       32"
+echo "  +----------------------------------------------------------+"
+echo "  |                Rserved, MBZ                              |"
+echo "  +----------------------------------------------------------+"
+echo ""
+echo "   31 30 29 28          18    16             5  4  3  2  1  0 "
+echo "  +----------------------------------------------------------+"
+echo "  |PG|CD|NW|Reserved|  |AM|  |WP|  |Reserved|NE|ET|TS|EM|MP|PE|"
+echo "  +----------------------------------------------------------+"
+echo "   |  |  |              |     |               |  |  |  |  |  |-- Protection enable"
+echo "   |  |  |              |     |               |  |  |  |  |-- Monitor Coprocessor"
+echo "   |  |  |              |     |               |  |  |  |-- Emulate"
+echo "   |  |  |              |     |               |  |  |-- Task switched"
+echo "   |  |  |              |     |               |  |--Extention type, reserved and force to 1"
+echo "   |  |  |              |     |               |-- Numeric Error, x87 related"
+echo "   |  |  |              |     |-- write protect, clear to 0 that supervisor can wirte to readonly pages"
+echo "   |  |  |              |-- Alignment Mask, set CR0.AM to 1 when RFLAGS.AC=1 enables alignment checking"
+echo "   |  |  |-- Not write through"
+echo "   |  |-- Cache disable"
+echo "   |-- enable page translation, need CR0.PE=1"
+
+
+

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+echo "#update grub"
+
+echo "grub2-editenv list   # verify it"
+
+echo ""
+echo "# the two operates the same file"
+echo "grub2-mkconfig -o /boot/grub2/grub.cfg   # generate updated grub.cfg"
+
+echo ""
+echo "# or use this one"
+echo "sudo grub2-mkconfig -o \"$(readlink -e /etc/grub2.cfg)\""
+
+echo ""
+echo "#check currently installed kernel version"
+echo "sudo awk -F\' '\$1==\"menuentry \" {print \$2}' /etc/grub2.cfg"
+
+echo ""
+echo "#set the default boot kernel version"
+echo "sudo grub2-set-default 0   // start from 0"
